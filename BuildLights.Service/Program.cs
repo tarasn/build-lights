@@ -29,7 +29,7 @@ namespace BuildLights.Service
                 });
                 x.RunAsLocalSystem();                                       
 
-                x.SetDescription("Sample Topshelf Host");                   
+                x.SetDescription("TFS Build Status Fetch Service");                   
                 x.SetDisplayName("Stuff");                                  
                 x.SetServiceName("Stuff");                                  
             });                                                             

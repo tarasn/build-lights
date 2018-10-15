@@ -25,7 +25,7 @@ namespace BuildLights.Service.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://almtfs.ncr.com:8080/tfs/DefaultCollection")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ServerAddress")]
         public string ServerAddress {
             get {
                 return ((string)(this["ServerAddress"]));
@@ -34,7 +34,7 @@ namespace BuildLights.Service.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Jumbo")]
+        [global::System.Configuration.DefaultSettingValueAttribute("TeamProjectName")]
         public string TeamProjectName {
             get {
                 return ((string)(this["TeamProjectName"]));
@@ -43,7 +43,7 @@ namespace BuildLights.Service.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Trunk-Jumbo-StoreServerExt-CI")]
+        [global::System.Configuration.DefaultSettingValueAttribute("BuildDefinitionName")]
         public string BuildDefinitionName {
             get {
                 return ((string)(this["BuildDefinitionName"]));
@@ -52,7 +52,7 @@ namespace BuildLights.Service.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10000")]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
         public int CheckInterval {
             get {
                 return ((int)(this["CheckInterval"]));
