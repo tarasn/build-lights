@@ -1,28 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using BuildLights.Service.Properties;
 using Topshelf;
+using MicrosoftBuildStatus = Microsoft.TeamFoundation.Build.Client.BuildStatus; 
+
 
 namespace BuildLights.Service
 {
-    class BuildLightsService
-    {
-        public void Start() {  }
-        public void Stop() {  }
-    }
-
-
     class Program
     {
         static void Main(string[] args)
         {
+
+            var bdc = new BuildDefinitionCriteria
+            {
+                ServerAddress = Settings.Default.ServerAddress,
+                BuildDefinitionName = Settings.Default.BuildDefinitionName,
+                TeamProjectName = Settings.Default.TeamProjectName
+            };
+            var checkInterval = TimeSpan.FromSeconds(Settings.Default.CheckInterval);
             var rc = HostFactory.Run(x =>                                   
             {
                 x.Service<BuildLightsService>(s =>                                  
                 {
-                    s.ConstructUsing(name => new BuildLightsService());             
+                    s.ConstructUsing(name => new BuildLightsService(bdc, checkInterval));             
                     s.WhenStarted(tc => tc.Start());                        
                     s.WhenStopped(tc => tc.Stop());                         
                 });
