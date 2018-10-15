@@ -29,9 +29,9 @@ namespace BuildLights.Service
                 });
                 x.RunAsLocalSystem();                                       
 
-                x.SetDescription("TFS Build Status Fetch Service");                   
-                x.SetDisplayName("Stuff");                                  
-                x.SetServiceName("Stuff");                                  
+                x.SetDescription("TFS Build Status Fetch Service");
+                x.SetDisplayName("TFSBuildStatusFetchService");
+                x.SetServiceName("TFSBuildStatusFetchService");                                  
             });                                                             
 
             var exitCode = (int)Convert.ChangeType(rc, rc.GetTypeCode());  
