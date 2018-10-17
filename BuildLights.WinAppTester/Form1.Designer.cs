@@ -64,6 +64,7 @@
             this.Controls.Add(this.buttonSend);
             this.Name = "Form1";
             this.Text = "Build Lights Arduino Tester";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
 
         }
