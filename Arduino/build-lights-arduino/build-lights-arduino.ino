@@ -30,31 +30,26 @@ void loop() {
     }
     // if you get a newline, print the string, then the string's value:
     if (inChar == '\n') {
-      /*Serial.print("Value:");
-      Serial.println(inString.toInt());
-      Serial.print("String: ");
-      Serial.println(inString);
-      // clear the string for new input:
-      inString = "";*/
+      
       Serial.print("Value:");
       Serial.println(inString.toInt());
       Serial.print("String: ");
       Serial.println(inString);
-      lightFlags = (byte)inString.toInt();
+      byte nLightFlags = (byte)inString.toInt();
+      if(nLightFlags==lightFlags){
+        inString = "";
+        return;
+      }
+      else{
+        lightFlags = nLightFlags;
+      }
       setLightPinState(redPin, redFlagPosition);
       setLightPinState(greenPin, greenFlagPosition);
       setLightPinState(yellowPin, yellowFlagPosition);
       inString = "";
     }
 
-    /*
-    lightFlags = (byte)Serial.parseInt();
-    if (Serial.read() == '\n') {
-      setLightPinState(redPin, redFlagPosition);
-      setLightPinState(greenPin, greenFlagPosition);
-      setLightPinState(yellowPin, yellowFlagPosition);
-    }
-    */
+    
   }
 }
 
